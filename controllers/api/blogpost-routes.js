@@ -16,6 +16,30 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // router.put to create updates. 
+router.get('/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+    });
+
+    const posts = postData.get({ plain: true });
+
+    res.render('edit', {
+      ...posts});
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put('/:id', withAuth, async (req, res) =>{
+  try {
+    const editPost = await Post.update(req.body, {
+      where: { id:req.params.id }
+    })
+    res.status(200).json({message:"post updated!"})
+  } catch (error) {
+    res.status(400).json("post not updated!")
+  }
+})
 
 
 router.delete('/:id', withAuth, async (req, res) => {
