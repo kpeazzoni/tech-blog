@@ -420,7 +420,7 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  color: #056e9f;
   text-decoration: none;
 }
 
@@ -884,7 +884,7 @@ a:hover {
 }
 
 .text-info {
-  color: #1bbc9b !important;
+  color: #1b51bc !important;
 }
 
 .text-danger {
@@ -921,7 +921,7 @@ a:hover {
 }
 
 .bg-info {
-  background-color: #1bbc9b !important;
+  background-color: #1b6bbc !important;
 }
 
 .bg-danger {
