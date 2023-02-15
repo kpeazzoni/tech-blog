@@ -9,6 +9,7 @@ router.post('/', withAuth, async (req, res) => {
                 ...req.body,
         user_id: req.session.user_id,
       });
+      res.json(newComment);
     })
 
 module.exports = router;

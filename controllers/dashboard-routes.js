@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
       const posts = blogPostData.map((post) => post.get({ plain: true }));
   
       // Pass serialized data and session flag into template
-      res.render('profile', {posts});
+      res.render('dashboard', {posts});
     } catch (err) {
       res.status(400).json(err);
     }
