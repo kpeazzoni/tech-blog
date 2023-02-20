@@ -28,7 +28,9 @@ router.get('/', withAuth, async (req, res) => {
       const posts = postData.get({ plain: true });
   
       res.render('edit', {
-        ...posts});
+        ...posts,
+      logged_in: true
+    });
     } catch (err) {
       res.status(500).json(err);
     }
